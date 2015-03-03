@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>jobline_landing_page 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Candidate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(2.000000, 1.000000)" stroke="#231F1F" stroke-width="2">
+            <path d="M25.2441501,52.5302879 L-0.00020021692,52.5302879 L-0.00020021692,0.468357139 L28.0301685,0.468357139 L40.0431837,12.4826489 L40.0431837,23.1903864" id="Stroke-3336" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <path d="M28.0303688,0.468357139 L28.0303688,12.4826489 L40.0433839,12.4826489" id="Stroke-3337" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <path d="M58.0629067,44.5207601 C58.0629067,52.2619687 51.7871074,58.5374338 44.0477223,58.5374338 C36.3063351,58.5374338 30.032538,52.2619687 30.032538,44.5207601 C30.032538,36.7795515 36.3063351,30.5040864 44.0477223,30.5040864 C51.7871074,30.5040864 58.0629067,36.7795515 58.0629067,44.5207601 L58.0629067,44.5207601 Z" id="Stroke-3338" fill="#FFD692" sketch:type="MSShapeGroup"></path>
+            <path d="M44.0477223,37.5124233 L44.0477223,51.2838052" id="Stroke-3339" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+            <path d="M50.0542299,43.5195691 L44.0477223,37.5124233 L39.0422993,43.5195691" id="Stroke-3340" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
