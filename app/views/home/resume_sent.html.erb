@@ -1,17 +1,16 @@
 
     <p>Thank you for submitting your resume through Linkedin!</p>
-    <p>Summary: <%= @summary %></p>
-    <p>Email: <%= @email %></p>
-    <p>First Name: <%= @first %></p>
-    <p>Last Name: <%= @last %></p>
-    <p>Birth: <%= @birth %></p>
-    <p>Phone: <%= @phone %></p>
-    <p>Address: <%= @address %></p>
-    <p>Postion: <%= @position %></p>
-    <p>Education: <%= @edu %></p>
-    <p>Location: <%= @location %></p>
-    <p>Industry: <%= @industry %></p>
-    <p>Interests: <%= @interest %></p>
-    <p>Languages: <%= @languages %></p>
-    <p>Skill: <%= @skill %></p>
-    <p>Special: <%= @special %></p>
+    <p>Summary: <%=@profile.summary %></p>
+    <p>Email: <%= @profile.email_address %></p>
+    <p>First Name: <%= @profile.first_name %></p>
+    <p>Last Name: <%= @profile.last_name %></p>
+    <p>Birth: <%= Date.parse("1/#{@profile.date_of_birth.month ? @profile.date_of_birth.month : 1}/#{@profile.date_of_birth.year}") %></p>
+    <p>Phone: <%= @profile.phone_numbers.phone_number %></p>
+    <p>Address: <%= @profile.main_address %></p>
+    <p>Postion: <%= @profile.positions.title %></p>
+    <p>Education: <%= @profile.educations.school_name %></p>
+    <p>Location: <%= @profile.location.name %></p>
+    <p>Industry: <%= @profile.industry %></p>
+    <p>Interests: <%= @profile.interests %></p>
+    <p>Languages: <%= @profile.languages.id %></p>
+    <p>Skill: <%= @profile.skill %></p>

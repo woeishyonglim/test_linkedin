@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       host = "http://127.0.0.1:3000"
 
     url = "#{host}/submit_linkedin_resume_cb"
-    client = LinkedIn::Client.new(LINKEDIN_API_KEY, LINKEDIN_SECRET_KEY)
+    client = LinkedIn::Client.new('75b8kw4gj8nv64', 'cLHcvQVJ1c2M0MKW')
     request_token = client.request_token({oauth_callback: url})
 
     rtoken = request_token.token
@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   def submit_linkedin_resume_cb
 
       #redirect_to "http://www.google.com
-      client = LinkedIn::Client.new(LINKEDIN_API_KEY, LINKEDIN_SECRET_KEY)
+      client = LinkedIn::Client.new('75b8kw4gj8nv64', 'cLHcvQVJ1c2M0MKW')
       if session[:atoken].nil?
           pin = params[:oauth_verifier]
           atoken, asecret = client.authorize_from_request(session[:rtoken], session[:rsecret], pin)
@@ -54,23 +54,9 @@ class HomeController < ApplicationController
                                            skills
                                            specialties
                                         ))
-      #TODO: Make it more efficient!
-      session[:summary] = profile.summary
-      session[:email] = profile.email_address
-      session[:first] = profile.first_name
-      session[:last] = profile.last_name
-      session[:birth] = profile.date_of_birth
-      session[:phone] = profile.phone_numbers
-      session[:address] = profile.main_address
-      session[:position] = profile.positions
-      session[:edu] = profile.educations
-      session[:location] = profile.location
-      session[:industry] = profile.industry
-      session[:interest] = profile.interests
-      session[:languages] = profile.languages
-      session[:skill] = profile.skills
-      session[:special] = profile.specialties
       
+
+      session[:profile] = profile
       session[:atoken] = nil
       session[:asecret] = nil
       redirect_to resume_sent_path
@@ -78,22 +64,11 @@ class HomeController < ApplicationController
    end
   
     def resume_sent
-        @summary = session[:summary]
-        @email = session[:email]
-        @first =session[:first]
-        @last = session[:last]
-        @birth = session[:birth]
-        @phone = session[:phone].phone_number
-        @address = session[:address]
-        @position = session[:position].title
-        @edu = session[:edu].degree
-        @location = session[:location].name
-        @industry = session[:industry]
-        @interest = session[:interest]
-        @languages = session[:languages]
-        @skill = session[:skill]
-        @special = session[:special]
+
+@profile = session[:profile]
 
     end
+    
+    
   
 end
