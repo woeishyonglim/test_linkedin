@@ -1,67 +1,72 @@
 
   <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
-  <h2> Thank you for submitting your resume through Linkedin! </h2>
+  <h2 style="color:red"> Thank you for submitting your resume through Linkedin! </h2>
 
-  <p> Summary: <%= @profile.summary %></p>
-  <p> Email: <%= @profile.email_address %></p>
-  <p> First Name: <%= @profile.first_name %></p>
-  <p> Last Name: <%= @profile.last_name %></p>
+  <p>Summary: <%= @profile.summary %></p>
+  <p>Email: <%= @profile.email_address %></p>
+  <p>First Name: <%= @profile.first_name %></p>
+  <p>Last Name: <%= @profile.last_name %></p>
 
   <% if @profile.date_of_birth.nil? %>
-    <p> Birth2: <%= @profile.date_of_birth %></p>
+    <p>Birth2: <%= @profile.date_of_birth %></p>
   <% else %>
-    <p> Birth: <%= Date.parse("/#{@profile.date_of_birth.day}/#{@profile.date_of_birth.month}/#{@profile.date_of_birth.year}") %></p>
+    <p>Birth: <%= Date.parse("/#{@profile.date_of_birth.day}/#{@profile.date_of_birth.month}/#{@profile.date_of_birth.year}") %></p>
   <% end %>
 
   <% if @profile.phone_numbers.nils? %>
-    <p> Phone: <%= @profile.phone_numbers %></p>
+    <p>Phone: <%= @profile.phone_numbers %></p>
   <% else %>
     <% @profile.phone_numbers.all.each.with_index do |e,index| %>
-      <p> Phone <%= index + 1 %>: <%= e.phone_number%> (<%= e.phone_type %>)</p>
+    <p>Phone <%= index + 1 %>: <%= e.phone_number%> (<%= e.phone_type %>)</p>
     <% end %>
   <% end %>
 
-  <p> Address: <%= @profile.main_address %></p>
+  <p>Address: <%= @profile.main_address %></p>
 
   <% if @profile.positions.nil? %>
-    <p> Position: <p>
+    <p>Position:<p>
   <% else %>
     <% @profile.positions.all.each.with_index do |e, index| %>
-      <p> Position(<%= index + 1 %>) : <%= e.title %></p>
+      <p>Position(<%= index + 1 %>) : <%= e.title %></p>
     <% end %>
   <% end %>
 
   <% if @profile.educations.nil? %>
-    <p> Education: <p>
+    <p>Education:<p>
   <% else %>
     <% @profile.educations.all.each.with_index do |e, index| %>
-      <p> School Name(<%= index + 1 %>) : <%= e.school_name %></p>
-      <p> Field of Study: <%= e.field_of_study %><p>
-      <p> Degree: <%= e.degree %><p>
+      <p>School Name(<%= index + 1 %>) : <%= e.school_name %></p>
+      <p>Field of Study: <%= e.field_of_study %><p>
+      <p>Degree: <%= e.degree %><p>
     <% end %>
   <% end %>
 
-  <p> Location: <%= @profile.location.name %></p>
-  <p> Industry: <%= @profile.industry %></p>
-  <p> Interests: <%= @profile.interests %></p>
+  <p>Location: <%= @profile.location.name %></p>
+  <p>Industry: <%= @profile.industry %></p>
+  <p>Interests: <%= @profile.interests %></p>
 
   <% if @profile.languages.nil? %>
-    <p> Languages: <p>
+    <p>Languages:<p>
   <% else %>
     <% @profile.languages.all.each.with_index do |e,index| %>
-      <p> Languages(<%= index + 1 %>): <%= e.language.name %><p>
-      <% end %>
+      <p>Languages(<%= index + 1 %>): <%= e.language.name %><p>
+    <% end %>
   <% end %>
 
   <% if @profile.skills.nil? %>
-    <p> Skills: </p>
+    <p>Skills:</p>
   <% else %>
     <% @profile.skills.all.each.with_index do |e, index| %>
-      <p> Skills(<%= index + 1 %>): <%= e.skill.name %><p>
+      <p>Skills(<%= index + 1 %>): <%= e.skill.name %><p>
     <% end %>
   <% end %>
 
-  <p> Specialities =  <%= @profile.specialties %><p>
-  <p> Picture URL:<a href= "<%= @profile.picture_url %>" > Click here to view the picture </a><p>
-  <p> Public Profile: <a href= "<%= @profile.public_profile_url %>" > Click here to view your public profile </a><p>
-  <p> Latest Modified Timestamp: <%= Time.at(@profile.last_modified_timestamp/1000) %><p>
+  <p>Specialities =  <%= @profile.specialties %><p>
+    <% if @profile.picture_url.nil? %>
+      <p>Profile picture: No profile picture.</p>
+  <% else %>
+      <p>Picture URL:<a href= "<%= @profile.picture_url %>" > Click here to view the picture </a><p>
+  <% end %>
+
+  <p>Public Profile: <a href= "<%= @profile.public_profile_url %>" > Click here to view your public profile </a><p>
+  <p>Latest Modified Timestamp: <%= Time.at(@profile.last_modified_timestamp/1000) %><p>

@@ -1,9 +1,13 @@
-<h1>Welcome to Jobline.</h1>
+<%#Remove the underline of a link%>
+  <STYLE><!-- A{text-decoration:none} --></STYLE>
 
+  <a href="https://www.jobline.com.sg">
+  <h1><SPAN STYLE="color: blue; font-size: 25pt">Welcome to Jobline.</span></h1>
+  </a>
 
   <section class="cv_linkedin">
-    <p class="cv_option">You can submit your profile through LinkedIn</p>
+    <p class="cv_option">You  can  submit your profile through <span style="color:red"> LinkedIn </span> </p>
     <a href="<%= submit_linkedin_resume_path %>">
-    <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
+      <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
     </a>
   </section>

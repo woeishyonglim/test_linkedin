@@ -56,5 +56,4 @@ class HomeController < ApplicationController
   def resume_sent
     @profile = session[:profile]
   end
-
 end
