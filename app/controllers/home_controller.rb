@@ -38,21 +38,24 @@ class HomeController < ApplicationController
       end
       
       profile = client.profile(fields: %w(
-                                           summary
-                                           email_address
-                                           first-name
-                                           last-name
-                                           date-of-birth
-                                           phone-numbers
-                                           main-address
-                                           positions
-                                           educations
-                                           location
-                                           industry
-                                           interests
-                                           languages
-                                           skills
-                                           specialties
+                                          summary
+                                          email_address
+                                          first-name
+                                          last-name
+                                          date-of-birth
+                                          phone-numbers
+                                          main-address
+                                          positions
+                                          educations
+                                          location
+                                          industry
+                                          interests
+                                          languages
+                                          skills
+                                          specialties
+                                          picture-url
+                                          public-profile-url
+                                          last-modified-timestamp
                                         ))
       
 
@@ -65,8 +68,7 @@ class HomeController < ApplicationController
   
     def resume_sent
 
-@profile = session[:profile]
-
+      @profile = session[:profile]
     end
     
     
