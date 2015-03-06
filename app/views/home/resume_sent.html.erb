@@ -62,11 +62,16 @@
   <% end %>
 
   <p>Specialities =  <%= @profile.specialties %><p>
-    <% if @profile.picture_url.nil? %>
+  <% if @profile.picture_url.nil? %>
       <p>Profile picture: No profile picture.</p>
   <% else %>
       <p>Picture URL:<a href= "<%= @profile.picture_url %>" > Click here to view the picture </a><p>
   <% end %>
 
-  <p>Public Profile: <a href= "<%= @profile.public_profile_url %>" > Click here to view your public profile </a><p>
+  <% if @profile.public_profile_url.nil? %>
+      <p>Public profile: Public profile url is not available.</p>
+  <% else %>
+      <p>Public Profile: <a href= "<%= @profile.public_profile_url %>" > Click here to view your public profile </a><p>
+  <% end %>
+  
   <p>Latest Modified Timestamp: <%= Time.at(@profile.last_modified_timestamp/1000) %><p>
