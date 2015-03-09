@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    
+
   # https://developer.linkedin.com/documents/profile-fields
   def submit_linkedin_resume
     host = "http://127.0.0.1:3000"
@@ -10,13 +10,15 @@ class HomeController < ApplicationController
     request_token = client.request_token({oauth_callback: url})
     rtoken = request_token.token
     rsecret = request_token.secret
-  
+
     # Save it to session because need to reconstruct at the callback
     session[:rtoken] = rtoken
     session[:rsecret] = rsecret
     redirect_to request_token.authorize_url
   end
-  
+
+
+
   def submit_linkedin_resume_cb
     #redirect_to "http://www.google.com
     client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_SECRET_KEY"])
@@ -28,7 +30,7 @@ class HomeController < ApplicationController
     else
       redirect_to "http://www.google.com"
     end
-    
+
     profile = client.profile(fields: %w(
                                           summary
                                           email_address
@@ -54,7 +56,7 @@ class HomeController < ApplicationController
     session[:asecret] = nil
     redirect_to resume_sent_path
   end
-  
+
   def resume_sent
     @profile = session[:profile]
   end

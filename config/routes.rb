@@ -50,31 +50,23 @@ TestLinkedin::Application.routes.draw do
 
 # Home page
 scope :controller => :home do
-    match 'candidate'       => :candidate
-    match 'submit_resume'   => :submit_resume
-    match 'resume_sent'     => :resume_sent
-    match 'enquiry'         => :enquiry
-    match 'enquire'         => :enquire
-    match 'post_a_job'      => :post_a_job
-    match 'post_job'        => :post_job
-    match 'posted'          => :posted
-    match 'about'           => :about
-    match 'history'         => :history
-    match 'employer'        => :employer
+
     match 'submit_linkedin_resume'    => :submit_linkedin_resume
     match 'submit_linkedin_resume_cb' => :submit_linkedin_resume_cb
-    match 'terms'           => :terms
-    match 'privacy'         => :privacy
-    match 'contact'         => :contact
+    match 'submit_resume'   => :submit_resume
+    match 'resume_sent'     => :resume_sent
+    match 'home_index'           => :home_index
 end
-
-
+scope :controller => :users do
+    match 'edit2_user'       => :edit
+end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "home#index"
   # See how all your routes lay out with "rake routes"
   resources :home
+  resources :users
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

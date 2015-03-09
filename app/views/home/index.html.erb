@@ -2,12 +2,13 @@
   <STYLE><!-- A{text-decoration:none} --></STYLE>
 
   <a href="https://www.jobline.com.sg">
-  <h1><SPAN STYLE="color: blue; font-size: 25pt">Welcome to Jobline.</span></h1>
+    <h1><SPAN STYLE="color: blue; font-size: 25pt">Welcome to Jobline.</span></h1>
   </a>
 
-  <section class="cv_linkedin">
-    <p class="cv_option">You  can  submit your profile through <span style="color:red"> LinkedIn </span> </p>
-    <a href="<%= submit_linkedin_resume_path %>">
-      <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
-    </a>
-  </section>
+  <p>You  can  submit your profile through <span style="color:red">LinkedIn</span></p>
+
+  <a href="<%= submit_linkedin_resume_path %>">
+    <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
+  </a>
+
+  <p> OR you can fill up the <a href= "<%= new_user_path %>" > <SPAN STYLE="color: green; font-size: 20pt">Application Form </span></a></p>

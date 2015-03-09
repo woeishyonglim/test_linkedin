@@ -1,3 +1,4 @@
+<STYLE><!-- A{text-decoration:none} --></STYLE>
 
   <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
   <h2 style="color:red"> Thank you for submitting your resume through Linkedin! </h2>
@@ -73,5 +74,9 @@
   <% else %>
       <p>Public Profile: <a href= "<%= @profile.public_profile_url %>" > Click here to view your public profile </a><p>
   <% end %>
-  
+
   <p>Latest Modified Timestamp: <%= Time.at(@profile.last_modified_timestamp/1000) %><p>
+
+  <p>Thank you for submitting your resume.<p>
+
+  <span style="color:blue"><%= link_to 'go back', home_index_path %></span></span></p>
