@@ -1,7 +1,7 @@
 <STYLE><!-- A{text-decoration:none} --></STYLE>
 
   <%= image_tag("LinkedIn.svg", alt: 'Upload your CV', width: 150, height: 41) %>
-  <h2 style="color:red"> Thank you for submitting your resume through Linkedin! </h2>
+  <h3 style="color:red"> Thank you for submitting your resume through Linkedin! Our recruiter will contact you soon! </h3>
 
   <p>Summary: <%= @profile.summary %></p>
   <p>Email: <%= @profile.email_address %></p>
@@ -79,4 +79,4 @@
 
   <p>Thank you for submitting your resume.<p>
 
-  <span style="color:blue"><%= link_to 'go back', home_index_path %></span></span></p>
+  <a href= "<%= home_index_path %>" > <span STYLE="color: chocolate; font-size: 15pt">GO BACK</span></a>
