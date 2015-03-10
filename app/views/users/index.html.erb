@@ -1,7 +1,7 @@
   <STYLE><!-- A{text-decoration:none} --></STYLE>
 
-  <%= link_to 'Add User', new_user_path %>
-  <p>This is my page</p>
+
+  <h1>List of User</h1>
 
   <% @users.each do |user| %>
     <p>
@@ -9,3 +9,5 @@
       Age = <%= user.age %> | <%= link_to 'Edit', edit_user_path(user) %> | <%= link_to 'Delete', user, method: :delete %></br>
     </p>
   <% end %>
+
+  <pre><SPAN STYLE="color: blue; font-size: 15pt"><%= link_to 'Home', home_index_path %></span>     <SPAN STYLE="color: blue; font-size: 15pt"><%= link_to 'Add User', new_user_path %></span></pre>
