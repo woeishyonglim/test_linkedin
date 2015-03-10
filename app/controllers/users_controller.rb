@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      redender 'new'
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(allowed_params)
       redirect_to users_path
     else
-      redender 'new'
+      render :edit
     end
   end
 
@@ -46,5 +46,5 @@ class UsersController < ApplicationController
     def allowed_params
       params.require(:user).permit(:name,:age)
     end
-    
+
 end

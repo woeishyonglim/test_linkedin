@@ -1,7 +1,20 @@
+  <p>This is new page</p>
+
   <%= form_for @user do |f| %>
-  <%= f.label :name %><br/>
-  <%= f.text_field :name %><br/>
-  <%= f.label :age %><br/>
-  <%= f.text_field :age %><br/>
-  <%= f.submit 'Save' %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <% if !f.object.errors[:name].blank? %>
+      <SPAN STYLE="color: blue; font-size: 9pt"><%= f.object.errors[:name] %></span>
+    <% end %>
+
+    <p></p>
+
+    <%= f.label :age %>
+    <%= f.text_field :age %></span>
+    <% if !f.object.errors[:age].blank? %>
+      <SPAN STYLE="color: blue; font-size: 9pt"><%= f.object.errors[:age] %></span>
+    <% end %>
+
+    <p></p>
+    <%= f.submit 'Create'%>
   <% end %>
